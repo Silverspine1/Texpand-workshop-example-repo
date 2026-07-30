@@ -68,7 +68,7 @@ public class Odometry {
 
     public void setStartPosition(double x, double y, double heading) {
         if (pinpoint != null) {
-            pinpoint.setPosition(new Pose2D(DistanceUnit.CM, x, y, AngleUnit.DEGREES, normalizeHeading(heading)));
+            pinpoint.setPosition(new Pose2D(DistanceUnit.CM, x, y, AngleUnit.DEGREES, normalizeHeading(-heading)));
         }
     }
 
@@ -82,7 +82,7 @@ public class Odometry {
 
 
     public double getHeading() {
-        return normalizeHeading(pinpoint.getHeading(AngleUnit.DEGREES));
+        return normalizeHeading(-pinpoint.getHeading(AngleUnit.DEGREES));
     }
 
     public double getVelX() {
