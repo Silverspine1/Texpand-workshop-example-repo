@@ -21,7 +21,7 @@ public class test extends OpMode {
             .setXLastAdjustmentPD(0.02, 0.004)
             .setYLastAdjustmentPD(0.02, 0.009)
             .setXOnPathPD(0.08, 0.004)
-            .setYOnPathPD(0.2, 0.004)
+            .setYOnPathPD(0.1, 0.004)
             .setFastHeadingPD(0.01, 0.0005)
             .setSlowHeadingPD(0.012, 0.002)
             .setRobotConstants(181, 130, 700, 650));
@@ -30,7 +30,7 @@ public class test extends OpMode {
             .setXLastAdjustmentPD(0.02, 0.004)
             .setYLastAdjustmentPD(0.02, 0.009)
             .setXOnPathPD(0.08, 0.004)
-            .setYOnPathPD(0.2, 0.004)
+            .setYOnPathPD(0.1, 0.004)
             .setFastHeadingPD(0.01, 0.0005)
             .setSlowHeadingPD(0.012, 0.002)
             .setRobotConstants(181, 130, 700, 650));
