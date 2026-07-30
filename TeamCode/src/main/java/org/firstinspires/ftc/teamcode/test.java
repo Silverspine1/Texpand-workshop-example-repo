@@ -43,10 +43,10 @@ public class test extends OpMode {
 
 
     private final SectionBuilder[] line = new SectionBuilder[] {
-            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(0, 100)),
+            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(0, 50)),
     };
     private final SectionBuilder[] curve = new SectionBuilder[] {
-            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(-30, 50), new Vector2D(-50, 100)),
+            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(0, 25), new Vector2D(0, 50)),
     };
 
 

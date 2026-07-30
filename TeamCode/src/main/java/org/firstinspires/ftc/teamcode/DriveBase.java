@@ -34,20 +34,12 @@ public class DriveBase {
      * still drives in the requested direction instead of being clipped into a different one.
      */
     public void drive(double vertical, double horizontal, double pivot) {
-        double flPower = vertical + horizontal + pivot;
-        double frPower = vertical - horizontal - pivot;
-        double blPower = vertical - horizontal + pivot;
-        double brPower = vertical + horizontal - pivot;
+        double flPower = vertical - horizontal + pivot;
+        double frPower = vertical + horizontal - pivot;
+        double blPower = vertical + horizontal + pivot;
+        double brPower = vertical - horizontal - pivot;
 
-        double max = Math.max(Math.max(Math.abs(flPower), Math.abs(frPower)),
-                              Math.max(Math.abs(blPower), Math.abs(brPower)));
 
-        if (max > 1) {
-            flPower /= max;
-            frPower /= max;
-            blPower /= max;
-            brPower /= max;
-        }
 
         fl.setPower(flPower);
         fr.setPower(frPower);
@@ -57,7 +49,7 @@ public class DriveBase {
 
     public void drive(RobotPower power) {
         if (power != null) {
-            drive(power.getVertical(), power.getHorizontal(), power.getPivot());
+            drive(power.getHorizontal(), -power.getVertical(), power.getPivot());
         }
     }
 }

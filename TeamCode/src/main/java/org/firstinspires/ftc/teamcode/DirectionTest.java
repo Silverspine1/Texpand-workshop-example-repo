@@ -16,10 +16,11 @@ public class DirectionTest extends OpMode {
 
     @Override
     public void init() {
-        odometry.setStartPosition(20,5,5);
         pinpoint = hardwareMap.get(GoBildaPinpointDriver.class, "pinpoint");
         odometry.configurePinpoint(pinpoint);
         driveBase.init(hardwareMap);
+        odometry.setStartPosition(20,5,5);
+
     }
 
     @Override
@@ -38,10 +39,10 @@ public class DirectionTest extends OpMode {
             vertical = -POWER;
             expected = "drive BACKWARD, Y decreases";
         } else if (gamepad1.dpad_left) {
-            horizontal = POWER;
+            horizontal = -POWER;
             expected = "strafe LEFT, X decreases";
         } else if (gamepad1.dpad_right) {
-            horizontal = -POWER;
+            horizontal = POWER;
             expected = "strafe RIGHT, X  increases";
         } else if (gamepad1.right_bumper) {
             pivot = POWER;
