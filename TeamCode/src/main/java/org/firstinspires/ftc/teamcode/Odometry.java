@@ -66,7 +66,6 @@ public class Odometry {
         }
     }
 
-    /* x and y in CM, heading in degrees. */
     public void setStartPosition(double x, double y, double heading) {
         if (pinpoint != null) {
             pinpoint.setPosition(new Pose2D(DistanceUnit.CM, x, y, AngleUnit.DEGREES, normalizeHeading(heading)));
@@ -81,7 +80,7 @@ public class Odometry {
         return pinpoint.getPosY(DistanceUnit.CM);
     }
 
-    /* 0 to 360 degrees. */
+
     public double getHeading() {
         return normalizeHeading(pinpoint.getHeading(AngleUnit.DEGREES));
     }
