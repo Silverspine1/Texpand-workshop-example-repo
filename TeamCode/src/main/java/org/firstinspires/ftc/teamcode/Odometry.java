@@ -74,11 +74,11 @@ public class Odometry {
     }
 
     public double getX() {
-        return pinpoint.getPosX(DistanceUnit.CM);
+        return pinpoint.getPosY(DistanceUnit.CM);
     }
 
     public double getY() {
-        return pinpoint.getPosY(DistanceUnit.CM);
+        return pinpoint.getPosX(DistanceUnit.CM);
     }
 
     /* 0 to 360 degrees. */
@@ -87,11 +87,11 @@ public class Odometry {
     }
 
     public double getVelX() {
-        return pinpoint.getVelX(DistanceUnit.CM);
+        return pinpoint.getVelY(DistanceUnit.CM);
     }
 
     public double getVelY() {
-        return pinpoint.getVelY(DistanceUnit.CM);
+        return pinpoint.getVelX(DistanceUnit.CM);
     }
 
     private static double normalizeHeading(double degrees) {
