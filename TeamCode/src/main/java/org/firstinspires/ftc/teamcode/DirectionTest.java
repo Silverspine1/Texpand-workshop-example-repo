@@ -34,16 +34,16 @@ public class DirectionTest extends OpMode {
 
         if (gamepad1.dpad_up) {
             vertical = POWER;
-            expected = "drive FORWARD, Y increases";
+            expected = "drive FORWARD, X increases";
         } else if (gamepad1.dpad_down) {
             vertical = -POWER;
-            expected = "drive BACKWARD, Y decreases";
+            expected = "drive BACKWARD, X decreases";
         } else if (gamepad1.dpad_left) {
             horizontal = -POWER;
-            expected = "strafe LEFT, X decreases";
+            expected = "strafe LEFT, Y decreases";
         } else if (gamepad1.dpad_right) {
             horizontal = POWER;
-            expected = "strafe RIGHT, X  increases";
+            expected = "strafe RIGHT, Y  increases";
         } else if (gamepad1.right_bumper) {
             pivot = POWER;
             expected = "turn CLOCKWISE, heading decreases";

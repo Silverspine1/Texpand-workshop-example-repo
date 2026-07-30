@@ -17,22 +17,10 @@ public class DriveBase {
         fl.setDirection(DcMotorSimple.Direction.REVERSE);
         bl.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        fl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        fr.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        bl.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        br.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
     }
 
-    /**
-     * Drives the robot, using the same sign convention the pathing library uses:
-     *
-     *   vertical   positive = forward       (robot relative Y, same as the odometry Y axis)
-     *   horizontal positive = to the LEFT   (robot relative X, same as the odometry X axis)
-     *   pivot      positive = clockwise     (heading decreasing)
-     *
-     * The powers are scaled down together if any of them would exceed 1, so the robot
-     * still drives in the requested direction instead of being clipped into a different one.
-     */
+
     public void drive(double vertical, double horizontal, double pivot) {
         double flPower = vertical - horizontal + pivot;
         double frPower = vertical + horizontal - pivot;
@@ -49,7 +37,7 @@ public class DriveBase {
 
     public void drive(RobotPower power) {
         if (power != null) {
-            drive(power.getHorizontal(), -power.getVertical(), power.getPivot());
+            drive(power.getVertical(), power.getHorizontal(), power.getPivot());
         }
     }
 }
