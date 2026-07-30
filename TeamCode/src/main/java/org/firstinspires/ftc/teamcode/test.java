@@ -43,10 +43,10 @@ public class test extends OpMode {
 
 
     private final SectionBuilder[] line = new SectionBuilder[] {
-            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(0, 100)),
+            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(100, 0)),
     };
     private final SectionBuilder[] curve = new SectionBuilder[] {
-            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(-30, 50), new Vector2D(-50, 100)),
+            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(50, -25), new Vector2D(100, -50)),
     };
 
 
@@ -73,6 +73,11 @@ public class test extends OpMode {
             pathing = true;
         } else if (gamepad1.left_bumper && !pathing) {
             follow.setPath(paths.returnPath("curve"));
+            pathing = true;
+        } else if (gamepad1.dpad_up && !pathing) {
+            follow.setPath(paths.returnPath("curve"));
+            follow.usePathHeadings(true);
+            follow.setHeadingLookAheadDistance(100);
             pathing = true;
         }else if (pathing && follow.isFinished(8,8)) {
             pathing = false;
