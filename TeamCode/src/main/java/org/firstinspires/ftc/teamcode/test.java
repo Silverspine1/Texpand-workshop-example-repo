@@ -43,14 +43,14 @@ public class test extends OpMode {
     DriveBase driveBase = new DriveBase();
 
     /*
-     * Path points are in CM in the field frame: +Y is the direction the robot faces at heading 0
-     * (forward), +X is to its left. So this "line" path drives 100 cm FORWARD.
+     * Path points are in CM in the field frame: +X is the direction the robot faces at heading 0
+     * (forward), +Y is to its left. So this "line" path drives 100 cm FORWARD.
      */
     private final SectionBuilder[] line = new SectionBuilder[] {
-            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(0, 100)),
+            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(100, 0)),
     };
     private final SectionBuilder[] curve = new SectionBuilder[] {
-            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(-30, 50), new Vector2D(-50, 100)),
+            () -> paths.addPoints(new Vector2D(0, 0), new Vector2D(50, -30), new Vector2D(100, -50)),
     };
 
 

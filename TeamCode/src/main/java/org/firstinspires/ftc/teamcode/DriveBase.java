@@ -26,8 +26,8 @@ public class DriveBase {
     /**
      * Drives the robot, using the same sign convention the pathing library uses:
      *
-     *   vertical   positive = forward       (robot relative Y, same as the odometry Y axis)
-     *   horizontal positive = to the LEFT   (robot relative X, same as the odometry X axis)
+     *   vertical   positive = forward       (robot relative X)
+     *   horizontal positive = to the LEFT   (robot relative Y, same as the odometry Y axis)
      *   pivot      positive = clockwise     (heading decreasing)
      *
      * The powers are scaled down together if any of them would exceed 1, so the robot
