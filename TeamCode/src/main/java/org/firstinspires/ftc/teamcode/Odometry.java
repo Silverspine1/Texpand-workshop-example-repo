@@ -14,8 +14,8 @@ public class Odometry {
     public static final double START_X = 0;
     public static final double START_Y = 0;
     public static final double START_HEADING = 0;
-    final double XOffset = 30;
-    final double YOffset = 40;
+    final double XOffset = -113;
+    final double YOffset = -176;
 
 
     private GoBildaPinpointDriver pinpoint;
