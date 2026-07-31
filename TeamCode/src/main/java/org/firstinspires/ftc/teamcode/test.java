@@ -17,20 +17,20 @@ public class test extends OpMode {
 
 
     PathsManager paths = new PathsManager(new RobotConfig()
-            .setXLastAdjustmentPD(0.02, 0.004)
-            .setYLastAdjustmentPD(0.02, 0.009)
-            .setXOnPathPD(0.08, 0.004)
-            .setYOnPathPD(0.1, 0.004)
-            .setFastHeadingPD(0.01, 0.0005)
+            .setXLastAdjustmentPD(0.01, 0.004)
+            .setYLastAdjustmentPD(0.01, 0.009)
+            .setXOnPathPD(0.06, 0.004)
+            .setYOnPathPD(0.04, 0.004)
+            .setFastHeadingPD(0.005, 0.005)
             .setSlowHeadingPD(0.012, 0.002)
             .setRobotConstants(181, 130, 700, 650));
 
     Follower follow = new Follower(new RobotConfig()
-            .setXLastAdjustmentPD(0.02, 0.004)
-            .setYLastAdjustmentPD(0.02, 0.009)
-            .setXOnPathPD(0.08, 0.004)
-            .setYOnPathPD(0.1, 0.004)
-            .setFastHeadingPD(0.01, 0.0005)
+            .setXLastAdjustmentPD(0.01, 0.004)
+            .setYLastAdjustmentPD(0.01, 0.009)
+            .setXOnPathPD(0.06, 0.004)
+            .setYOnPathPD(0.04, 0.004)
+            .setFastHeadingPD(0.005, 0.005)
             .setSlowHeadingPD(0.012, 0.002)
             .setRobotConstants(181, 130, 700, 650));
 
@@ -71,13 +71,16 @@ public class test extends OpMode {
         if (gamepad1.right_bumper && !pathing) {
             follow.setPath(paths.returnPath("line"));
             pathing = true;
+            targetHeading = 0;
         } else if (gamepad1.left_bumper && !pathing) {
             follow.setPath(paths.returnPath("curve"));
             pathing = true;
+            targetHeading = 0;
         } else if (gamepad1.dpad_up && !pathing) {
             follow.setPath(paths.returnPath("curve"));
             follow.usePathHeadings(true);
             follow.setHeadingLookAheadDistance(100);
+            follow.setHeadingOffset(-90);
             pathing = true;
         }else if (pathing && follow.isFinished(8,8)) {
             pathing = false;

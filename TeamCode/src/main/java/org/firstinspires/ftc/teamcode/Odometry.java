@@ -14,6 +14,9 @@ public class Odometry {
     public static final double START_X = 0;
     public static final double START_Y = 0;
     public static final double START_HEADING = 0;
+    final double XOffset = 30;
+    final double YOffset = 40;
+
 
     private GoBildaPinpointDriver pinpoint;
 
@@ -28,7 +31,7 @@ public class Odometry {
          *  The Y pod offset refers to how far forwards from the tracking point the Y (strafe) odometry pod is.
          *  Forward of center is a positive number, backwards is a negative number.
          */
-        pinpoint.setOffsets(15, 100, DistanceUnit.MM);
+        pinpoint.setOffsets(YOffset, XOffset, DistanceUnit.MM);
 
         /*
          * Set the kind of pods used by your robot. If you're using goBILDA odometry pods, select either
